@@ -1,0 +1,16 @@
+
+
+<p *ngIf="product.price<700">Course is Availabe for discount</p>
+
+
+
+<ng-container *ngIf="product.quantity>0 then template1 else template2"></ng-container>
+
+<ng-template #template1>
+
+    <button class="btn btn-primary" [disabled]= isUnchanged (click)="clickChildMe()">Check Availability</button>
+</ng-template>
+
+<ng-template #template2>
+    <p>Course is Not Availabe</p>
+</ng-template>
